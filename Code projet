@@ -34,3 +34,39 @@ def placerfourmi():
         jeu.create_text((40*j+20, 40*i+20), text='⇢', fill="red",font=('Helvetica','30','bold'))
     if d=='o':
         jeu.create_text((40*j+20, 40*i+20), text='⇠', fill="red",font=('Helvetica','30','bold'))
+        
+   
+def action():
+    global fourmi,plateau,jeu
+    i,y=fourmi[0],fourmi[1]
+    print(fourmi)
+    if fourmi[2]=='n':
+        if plateau[i][y]=='black':
+            fourmi[2]='o'
+            plateau[i][y]='white'
+            if i==0:
+                fourmi[0]=9
+            else:
+                fourmi[0]-=1
+        else:
+            fourmi[2]='e'
+            plateau[i][y]='black'
+            if i==0:
+                fourmi[0]=9
+            else:
+                fourmi[0]-=1
+    elif fourmi[2]=='s':
+        if plateau[i][y]=='black':
+            fourmi[2]='e'
+            plateau[i][y]='white'
+            if i==9:
+                fourmi[0]=0
+            else:
+                fourmi[0]+=1
+        else:
+            fourmi[2]='o'
+            plateau[i][y]='black'
+            if i==9:
+                fourmi[0]=0
+            else:
+                fourmi[0]+=1

@@ -70,7 +70,7 @@ def action():
                 fourmi[0]=0
             else:
                 fourmi[0]+=1
-   elif fourmi[2]=='o':
+    elif fourmi[2]=='o':
         if plateau[i][y]=='black':
             fourmi[2]='n'
             plateau[i][y]='white'

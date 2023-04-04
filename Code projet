@@ -111,9 +111,9 @@ def play():
         time.sleep(1)      
 
 choix=Frame(fenetre)
-Supp= Button(fenetre,text='Play', bg='lime',width=5,command=play).pack(side=LEFT)
+Supp= Button(fenetre,text='Play', bg='limegreen',width=5,command=play).pack(side=LEFT)
 Supp= Button(fenetre,text='Pause', bg='gold',width=5).pack(side=LEFT)
-Supp= Button(fenetre,text='Next', bg='royalblue',width=5,command=action).pack(side=LEFT)
+Supp= Button(fenetre,text='Next', bg='darkturquoise',width=5,command=action).pack(side=LEFT)
 choix.pack()
 dessinerplateau()
 placerfourmi()

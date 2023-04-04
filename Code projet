@@ -15,10 +15,10 @@ jeu.pack()
 
 def dessinerplateau():
     global jeu,plateau
-    for i in range(10):
-        for j in range(10):
+    for i in range(16):
+        for j in range(16):
            
-            jeu.create_rectangle((40*j, 40*i), (40*j+40, 40*i+40), fill=plateau[i][j])
+            jeu.create_rectangle((25*j, 25*i), (25*j+25, 25*i+25), fill=plateau[i][j])
 def placerfourmi():
     global fourmi
     i=fourmi[0]
@@ -70,3 +70,52 @@ def action():
                 fourmi[0]=0
             else:
                 fourmi[0]+=1
+   elif fourmi[2]=='o':
+        if plateau[i][y]=='black':
+            fourmi[2]='n'
+            plateau[i][y]='white'
+            if y==0:
+                fourmi[1]=9
+            else:
+                fourmi[1]-=1
+        else:
+            fourmi[2]='s'
+            plateau[i][y]='black'
+            if y==0:
+                fourmi[1]=9
+            else:
+                fourmi[1]-=1
+    else:
+        if plateau[i][y]=='black':
+            fourmi[2]='s'
+            plateau[i][y]='white'
+            if y==9:
+                fourmi[1]=0
+            else:
+                fourmi[1]+=1
+        else:
+            fourmi[2]='n'
+            plateau[i][y]='black'
+            if y==9:
+                fourmi[1]=0
+            else:
+                fourmi[1]+=1
+    print(fourmi)
+    dessinerplateau()
+    placerfourmi()
+def play():
+    global jeu
+    while(True):
+        action()
+        jeu.update_idletasks()
+        time.sleep(1)      
+
+choix=Frame(fenetre)
+Supp= Button(fenetre,text='Play', bg='green',width=5,command=play).pack(side=LEFT)
+Supp= Button(fenetre,text='Pause', bg='blue',width=5).pack(side=LEFT)
+Supp= Button(fenetre,text='Next', bg='purple',width=5,command=action).pack(side=LEFT)
+choix.pack()
+dessinerplateau()
+placerfourmi()
+#on affiche la fenetre
+fenetre.mainloop()

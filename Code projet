@@ -27,13 +27,13 @@ def placerfourmi():
     global jeu
 
     if d=='n':
-        jeu.create_text((40*j+20, 40*i+20), text='⇡', fill="red",font=('Helvetica','30','bold'))
+        jeu.create_text((40*j+20, 40*i+20), text='🐜', fill="red",font=('Helvetica','30','bold'))
     if d=='s':
-        jeu.create_text((40*j+20, 40*i+20), text='⇣', fill="red",font=('Helvetica','30','bold'))
+        jeu.create_text((40*j+20, 40*i+20), text='🐜', fill="red",font=('Helvetica','30','bold'))
     if d=='e':
-        jeu.create_text((40*j+20, 40*i+20), text='⇢', fill="red",font=('Helvetica','30','bold'))
+        jeu.create_text((40*j+20, 40*i+20), text='🐜', fill="red",font=('Helvetica','30','bold'))
     if d=='o':
-        jeu.create_text((40*j+20, 40*i+20), text='⇠', fill="red",font=('Helvetica','30','bold'))
+        jeu.create_text((40*j+20, 40*i+20), text='🐜', fill="red",font=('Helvetica','30','bold'))
         
    
 def action():

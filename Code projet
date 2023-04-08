@@ -125,8 +125,8 @@ B= Button(fenetre,text='Play', bg='springgreen',width=7,command=play).pack(side=
 B = Button(fenetre, text='Pause', bg='gold', width=7, command=pause).pack(side=LEFT)#NV
 B= Button(fenetre, text='Retour', bg='lightskyblue', width=7, command=retour).pack(side=RIGHT)   #(nv retour)
 B= Button(fenetre,text='Next', bg='springgreen',width=7,command=action).pack(side=RIGHT)
-B = Button(choix, text='Augmenter', command=augmenter_vitesse).pack(side=LEFT)
-B = Button(choix, text='Diminuer', command=diminuer_vitesse).pack(side=LEFT)
+B = Button(choix, text='⚡️', bg= 'yellow', width=7,command=augmenter_vitesse).pack(side=LEFT)
+B = Button(choix, text=' 🐌', bg='lawngreen', width=7,command=diminuer_vitesse).pack(side=RIGHT)
 choix.pack()
 dessinerplateau()
 placerfourmi()

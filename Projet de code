@@ -112,15 +112,33 @@ def augmenter_vitesse():
 def diminuer_vitesse():
     global vitesse
     vitesse += 0.1
-    
-def play():
-    global jeu
-    while(True):
-        action()
-        jeu.update_idletasks()
-        time.sleep(1)      
+def retour():
+    global fourmi, plateau, jeu, etats_precedents
+    if len(etats_precedents) > 0:
+        # Récupérer l'état précédent de la pile
+        dernier_etat = etats_precedents.pop()
+        # Mettre à jour la fourmi et le plateau
+        fourmi = dernier_etat[0]
+        plateau = dernier_etat[1]
+        # Redessiner le plateau et la fourmi
+        dessinerplateau()
+        placerfourmi()
+#nouveau (retour)   
 
-choix=Frame(fenetre)
+play_id = None#NV
+
+def play():
+    global jeu, play_id
+    action() # exécute la première action
+    jeu.update_idletasks()
+    play_id = jeu.after(int(vitesse*1000), play) # planifie l'exécution de la fonction play() après un délai en fonction de la vitesse choisie 
+
+def pause():
+    global jeu, play_id
+    jeu.after_cancel(play_id)#NV
+
+choix=Frame(fenetre)     
+
 B= Button(fenetre,text='Play', bg='springgreen',width=7,command=play).pack(side=LEFT)
 B = Button(fenetre, text='Pause', bg='gold', width=7, command=pause).pack(side=LEFT)#NV
 B= Button(fenetre, text='Retour', bg='lightskyblue', width=7, command=retour).pack(side=RIGHT)   #(nv retour)

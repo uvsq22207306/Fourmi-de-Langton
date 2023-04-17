@@ -141,6 +141,13 @@ def play():
 def pause():
     global jeu, play_id
     jeu.after_cancel(play_id)#NV
+    
+import pickle
+
+def sauvegarder():
+    global plateau
+    with open('etat_grille.pickle', 'wb') as f:
+        pickle.dump(plateau, f)
 
 choix=Frame(fenetre)     
 

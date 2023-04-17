@@ -145,9 +145,9 @@ def pause():
 import pickle
 
 def sauvegarder():
-    global plateau
-    with open('etat_grille.pickle', 'wb') as f:
-        pickle.dump(plateau, f)
+    donnees = [plateau, fourmi]
+    with open("sauvegarde.pickle", "wb") as f:
+        pickle.dump(donnees, f)
 
 choix=Frame(fenetre)     
 

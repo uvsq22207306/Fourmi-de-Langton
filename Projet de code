@@ -112,6 +112,8 @@ def augmenter_vitesse():
 def diminuer_vitesse():
     global vitesse
     vitesse += 0.1
+
+
 def retour():
     global fourmi, plateau, jeu, etats_precedents
     if len(etats_precedents) > 0:
@@ -125,7 +127,10 @@ def retour():
         placerfourmi()
 #nouveau (retour)   
 
-play_id = None#NV
+
+#nouvelle fonction play (probleme boucle infini)
+
+play_id = None
 
 def play():
     global jeu, play_id
